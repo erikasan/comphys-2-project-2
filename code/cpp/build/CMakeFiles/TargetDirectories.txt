@@ -1,0 +1,9 @@
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/edit_cache.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/monster.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/mylib.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/vmc.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/test.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/metropolis_langevin.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/numerical.dir
+/home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/gradient_descent.dir

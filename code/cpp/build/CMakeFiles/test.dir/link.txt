@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/test.dir/main/unit_testing.o  -o test libmylib.a 
