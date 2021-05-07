@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/erikasan/Documents/comphys-2-project1/code/cpp
+CMAKE_SOURCE_DIR = /home/erikasan/Documents/comphys-2-project-2/code/cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/erikasan/Documents/comphys-2-project1/code/cpp/build
+CMAKE_BINARY_DIR = /home/erikasan/Documents/comphys-2-project-2/code/cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles /home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles /home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/erikasan/Documents/comphys-2-project1/code/cpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named monster
-
-# Build rule for target.
-monster: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 monster
-.PHONY : monster
-
-# fast build rule for target.
-monster/fast:
-	$(MAKE) -f CMakeFiles/monster.dir/build.make CMakeFiles/monster.dir/build
-.PHONY : monster/fast
-
-#=============================================================================
 # Target rules for targets named mylib
 
 # Build rule for target.
@@ -135,71 +122,6 @@ mylib: cmake_check_build_system
 mylib/fast:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
-
-#=============================================================================
-# Target rules for targets named vmc
-
-# Build rule for target.
-vmc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vmc
-.PHONY : vmc
-
-# fast build rule for target.
-vmc/fast:
-	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/build
-.PHONY : vmc/fast
-
-#=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
-
-#=============================================================================
-# Target rules for targets named metropolis_langevin
-
-# Build rule for target.
-metropolis_langevin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 metropolis_langevin
-.PHONY : metropolis_langevin
-
-# fast build rule for target.
-metropolis_langevin/fast:
-	$(MAKE) -f CMakeFiles/metropolis_langevin.dir/build.make CMakeFiles/metropolis_langevin.dir/build
-.PHONY : metropolis_langevin/fast
-
-#=============================================================================
-# Target rules for targets named numerical
-
-# Build rule for target.
-numerical: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 numerical
-.PHONY : numerical
-
-# fast build rule for target.
-numerical/fast:
-	$(MAKE) -f CMakeFiles/numerical.dir/build.make CMakeFiles/numerical.dir/build
-.PHONY : numerical/fast
-
-#=============================================================================
-# Target rules for targets named gradient_descent
-
-# Build rule for target.
-gradient_descent: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gradient_descent
-.PHONY : gradient_descent
-
-# fast build rule for target.
-gradient_descent/fast:
-	$(MAKE) -f CMakeFiles/gradient_descent.dir/build.make CMakeFiles/gradient_descent.dir/build
-.PHONY : gradient_descent/fast
 
 # target to build an object file
 GDsampler.o:
@@ -215,21 +137,6 @@ GDsampler.i:
 GDsampler.s:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/GDsampler.s
 .PHONY : GDsampler.s
-
-# target to build an object file
-Hamiltonians/ellipticoscillator.o:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o
-.PHONY : Hamiltonians/ellipticoscillator.o
-
-# target to preprocess a source file
-Hamiltonians/ellipticoscillator.i:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.i
-.PHONY : Hamiltonians/ellipticoscillator.i
-
-# target to generate assembly for a file
-Hamiltonians/ellipticoscillator.s:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.s
-.PHONY : Hamiltonians/ellipticoscillator.s
 
 # target to build an object file
 Hamiltonians/hamiltonian.o:
@@ -307,49 +214,19 @@ InitialStates/randomuniform2.s:
 .PHONY : InitialStates/randomuniform2.s
 
 # target to build an object file
-WaveFunctions/complexfunction.o:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o
-.PHONY : WaveFunctions/complexfunction.o
+WaveFunctions/gaussian_binary.o:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o
+.PHONY : WaveFunctions/gaussian_binary.o
 
 # target to preprocess a source file
-WaveFunctions/complexfunction.i:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/complexfunction.i
-.PHONY : WaveFunctions/complexfunction.i
+WaveFunctions/gaussian_binary.i:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.i
+.PHONY : WaveFunctions/gaussian_binary.i
 
 # target to generate assembly for a file
-WaveFunctions/complexfunction.s:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/complexfunction.s
-.PHONY : WaveFunctions/complexfunction.s
-
-# target to build an object file
-WaveFunctions/numericgaussian.o:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o
-.PHONY : WaveFunctions/numericgaussian.o
-
-# target to preprocess a source file
-WaveFunctions/numericgaussian.i:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.i
-.PHONY : WaveFunctions/numericgaussian.i
-
-# target to generate assembly for a file
-WaveFunctions/numericgaussian.s:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.s
-.PHONY : WaveFunctions/numericgaussian.s
-
-# target to build an object file
-WaveFunctions/simplegaussian.o:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o
-.PHONY : WaveFunctions/simplegaussian.o
-
-# target to preprocess a source file
-WaveFunctions/simplegaussian.i:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.i
-.PHONY : WaveFunctions/simplegaussian.i
-
-# target to generate assembly for a file
-WaveFunctions/simplegaussian.s:
-	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.s
-.PHONY : WaveFunctions/simplegaussian.s
+WaveFunctions/gaussian_binary.s:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.s
+.PHONY : WaveFunctions/gaussian_binary.s
 
 # target to build an object file
 WaveFunctions/wavefunction.o:
@@ -365,96 +242,6 @@ WaveFunctions/wavefunction.i:
 WaveFunctions/wavefunction.s:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/wavefunction.s
 .PHONY : WaveFunctions/wavefunction.s
-
-# target to build an object file
-main/Metropolis_Langevin.o:
-	$(MAKE) -f CMakeFiles/metropolis_langevin.dir/build.make CMakeFiles/metropolis_langevin.dir/main/Metropolis_Langevin.o
-.PHONY : main/Metropolis_Langevin.o
-
-# target to preprocess a source file
-main/Metropolis_Langevin.i:
-	$(MAKE) -f CMakeFiles/metropolis_langevin.dir/build.make CMakeFiles/metropolis_langevin.dir/main/Metropolis_Langevin.i
-.PHONY : main/Metropolis_Langevin.i
-
-# target to generate assembly for a file
-main/Metropolis_Langevin.s:
-	$(MAKE) -f CMakeFiles/metropolis_langevin.dir/build.make CMakeFiles/metropolis_langevin.dir/main/Metropolis_Langevin.s
-.PHONY : main/Metropolis_Langevin.s
-
-# target to build an object file
-main/different_wavefunction.o:
-	$(MAKE) -f CMakeFiles/monster.dir/build.make CMakeFiles/monster.dir/main/different_wavefunction.o
-.PHONY : main/different_wavefunction.o
-
-# target to preprocess a source file
-main/different_wavefunction.i:
-	$(MAKE) -f CMakeFiles/monster.dir/build.make CMakeFiles/monster.dir/main/different_wavefunction.i
-.PHONY : main/different_wavefunction.i
-
-# target to generate assembly for a file
-main/different_wavefunction.s:
-	$(MAKE) -f CMakeFiles/monster.dir/build.make CMakeFiles/monster.dir/main/different_wavefunction.s
-.PHONY : main/different_wavefunction.s
-
-# target to build an object file
-main/gradient_descent.o:
-	$(MAKE) -f CMakeFiles/gradient_descent.dir/build.make CMakeFiles/gradient_descent.dir/main/gradient_descent.o
-.PHONY : main/gradient_descent.o
-
-# target to preprocess a source file
-main/gradient_descent.i:
-	$(MAKE) -f CMakeFiles/gradient_descent.dir/build.make CMakeFiles/gradient_descent.dir/main/gradient_descent.i
-.PHONY : main/gradient_descent.i
-
-# target to generate assembly for a file
-main/gradient_descent.s:
-	$(MAKE) -f CMakeFiles/gradient_descent.dir/build.make CMakeFiles/gradient_descent.dir/main/gradient_descent.s
-.PHONY : main/gradient_descent.s
-
-# target to build an object file
-main/main.o:
-	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.o
-.PHONY : main/main.o
-
-# target to preprocess a source file
-main/main.i:
-	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.i
-.PHONY : main/main.i
-
-# target to generate assembly for a file
-main/main.s:
-	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.s
-.PHONY : main/main.s
-
-# target to build an object file
-main/numerical_simpleharmonic.o:
-	$(MAKE) -f CMakeFiles/numerical.dir/build.make CMakeFiles/numerical.dir/main/numerical_simpleharmonic.o
-.PHONY : main/numerical_simpleharmonic.o
-
-# target to preprocess a source file
-main/numerical_simpleharmonic.i:
-	$(MAKE) -f CMakeFiles/numerical.dir/build.make CMakeFiles/numerical.dir/main/numerical_simpleharmonic.i
-.PHONY : main/numerical_simpleharmonic.i
-
-# target to generate assembly for a file
-main/numerical_simpleharmonic.s:
-	$(MAKE) -f CMakeFiles/numerical.dir/build.make CMakeFiles/numerical.dir/main/numerical_simpleharmonic.s
-.PHONY : main/numerical_simpleharmonic.s
-
-# target to build an object file
-main/unit_testing.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main/unit_testing.o
-.PHONY : main/unit_testing.o
-
-# target to preprocess a source file
-main/unit_testing.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main/unit_testing.i
-.PHONY : main/unit_testing.i
-
-# target to generate assembly for a file
-main/unit_testing.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main/unit_testing.s
-.PHONY : main/unit_testing.s
 
 # target to build an object file
 metropolis_langevin.o:
@@ -523,20 +310,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... monster"
 	@echo "... mylib"
-	@echo "... vmc"
-	@echo "... test"
-	@echo "... metropolis_langevin"
-	@echo "... numerical"
-	@echo "... gradient_descent"
+	@echo "... edit_cache"
 	@echo "... GDsampler.o"
 	@echo "... GDsampler.i"
 	@echo "... GDsampler.s"
-	@echo "... Hamiltonians/ellipticoscillator.o"
-	@echo "... Hamiltonians/ellipticoscillator.i"
-	@echo "... Hamiltonians/ellipticoscillator.s"
 	@echo "... Hamiltonians/hamiltonian.o"
 	@echo "... Hamiltonians/hamiltonian.i"
 	@echo "... Hamiltonians/hamiltonian.s"
@@ -552,36 +330,12 @@ help:
 	@echo "... InitialStates/randomuniform2.o"
 	@echo "... InitialStates/randomuniform2.i"
 	@echo "... InitialStates/randomuniform2.s"
-	@echo "... WaveFunctions/complexfunction.o"
-	@echo "... WaveFunctions/complexfunction.i"
-	@echo "... WaveFunctions/complexfunction.s"
-	@echo "... WaveFunctions/numericgaussian.o"
-	@echo "... WaveFunctions/numericgaussian.i"
-	@echo "... WaveFunctions/numericgaussian.s"
-	@echo "... WaveFunctions/simplegaussian.o"
-	@echo "... WaveFunctions/simplegaussian.i"
-	@echo "... WaveFunctions/simplegaussian.s"
+	@echo "... WaveFunctions/gaussian_binary.o"
+	@echo "... WaveFunctions/gaussian_binary.i"
+	@echo "... WaveFunctions/gaussian_binary.s"
 	@echo "... WaveFunctions/wavefunction.o"
 	@echo "... WaveFunctions/wavefunction.i"
 	@echo "... WaveFunctions/wavefunction.s"
-	@echo "... main/Metropolis_Langevin.o"
-	@echo "... main/Metropolis_Langevin.i"
-	@echo "... main/Metropolis_Langevin.s"
-	@echo "... main/different_wavefunction.o"
-	@echo "... main/different_wavefunction.i"
-	@echo "... main/different_wavefunction.s"
-	@echo "... main/gradient_descent.o"
-	@echo "... main/gradient_descent.i"
-	@echo "... main/gradient_descent.s"
-	@echo "... main/main.o"
-	@echo "... main/main.i"
-	@echo "... main/main.s"
-	@echo "... main/numerical_simpleharmonic.o"
-	@echo "... main/numerical_simpleharmonic.i"
-	@echo "... main/numerical_simpleharmonic.s"
-	@echo "... main/unit_testing.o"
-	@echo "... main/unit_testing.i"
-	@echo "... main/unit_testing.s"
 	@echo "... metropolis_langevin.o"
 	@echo "... metropolis_langevin.i"
 	@echo "... metropolis_langevin.s"

@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/gradient_descent.dir/main/gradient_descent.o  -o gradient_descent libmylib.a 

@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/main/unit_testing.o"
   "test.pdb"
   "test"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang )
   include(CMakeFiles/test.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

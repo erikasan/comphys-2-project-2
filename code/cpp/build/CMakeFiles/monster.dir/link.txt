@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/monster.dir/main/different_wavefunction.o  -o monster libmylib.a 

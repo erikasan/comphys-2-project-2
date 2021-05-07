@@ -9,15 +9,6 @@ CMakeFiles/mylib.dir/GDsampler.o: ../particle.h
 CMakeFiles/mylib.dir/GDsampler.o: ../sampler.h
 CMakeFiles/mylib.dir/GDsampler.o: ../system.h
 
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../Hamiltonians/ellipticoscillator.cpp
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../Hamiltonians/ellipticoscillator.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../Hamiltonians/hamiltonian.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../Hamiltonians/harmonicoscillator.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../Math/random.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../WaveFunctions/wavefunction.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../particle.h
-CMakeFiles/mylib.dir/Hamiltonians/ellipticoscillator.o: ../system.h
-
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Hamiltonians/hamiltonian.cpp
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Hamiltonians/hamiltonian.h
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Math/random.h
@@ -49,29 +40,13 @@ CMakeFiles/mylib.dir/InitialStates/randomuniform2.o: ../InitialStates/randomunif
 CMakeFiles/mylib.dir/InitialStates/randomuniform2.o: ../particle.h
 CMakeFiles/mylib.dir/InitialStates/randomuniform2.o: ../system.h
 
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../Math/random.h
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../WaveFunctions/complexfunction.cpp
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../WaveFunctions/complexfunction.h
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../WaveFunctions/wavefunction.h
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../particle.h
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../sampler.h
-CMakeFiles/mylib.dir/WaveFunctions/complexfunction.o: ../system.h
-
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../Math/random.h
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../WaveFunctions/numericgaussian.cpp
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../WaveFunctions/numericgaussian.h
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../WaveFunctions/simplegaussian.h
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../WaveFunctions/wavefunction.h
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../particle.h
-CMakeFiles/mylib.dir/WaveFunctions/numericgaussian.o: ../system.h
-
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../Math/random.h
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/simplegaussian.cpp
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/simplegaussian.h
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/wavefunction.h
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../particle.h
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../sampler.h
-CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../system.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../Math/random.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../WaveFunctions/gaussian_binary.cpp
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../WaveFunctions/gaussian_binary.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../WaveFunctions/wavefunction.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../particle.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../sampler.h
+CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../system.h
 
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: ../WaveFunctions/wavefunction.cpp
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: ../WaveFunctions/wavefunction.h

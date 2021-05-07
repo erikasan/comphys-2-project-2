@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3  -rdynamic   -o vmc_parallel libmylib.a -lgomp -lpthread 

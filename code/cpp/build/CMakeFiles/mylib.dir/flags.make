@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Wextra -O3   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/erikasan/Documents/comphys-2-project1/code/cpp/. -I/home/erikasan/Documents/comphys-2-project1/code/cpp/Hamiltonians -I/home/erikasan/Documents/comphys-2-project1/code/cpp/InitialStates -I/home/erikasan/Documents/comphys-2-project1/code/cpp/Math -I/home/erikasan/Documents/comphys-2-project1/code/cpp/WaveFunctions 
+CXX_INCLUDES = -I/home/erikasan/Documents/comphys-2-project-2/code/cpp/. -I/home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians -I/home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates -I/home/erikasan/Documents/comphys-2-project-2/code/cpp/Math -I/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions 
 
