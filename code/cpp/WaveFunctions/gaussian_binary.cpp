@@ -62,46 +62,13 @@ double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
   return 0;
 }
 
-double Gaussian_Binary::evaluate(std::vector<class Particle*> particles, int particle_id)
-{
-  return 0;
-}
-
 double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> particles)
 {
   return 0;
-}
-
-std::vector<double> Gaussian_Binary::quantumForce(std::vector<class Particle*> particles, int particle_id)
-{
-  std::vector<double> qForce = std::vector<double>();
-  return qForce;
 }
 
 std::vector<double> Gaussian_Binary::quantumForce(std::vector<class Particle*> particles)
 {
   std::vector<double> qForce = std::vector<double>();
   return qForce;
-}
-
-void Gaussian_Binary::updateDistances(std::vector<class Particle*> particles,int particle_id)
-{
-  return;
-}
-
-void Gaussian_Binary::initiateDistances(std::vector<class Particle*> particles)
-{
-  return;
-}
-void Gaussian_Binary::sample(std::vector<class Particle*> particles, double localEnergy)
-{
-  return;
-}
-void Gaussian_Binary::computeAverages(double steps)
-{
-  return;
-}
-void Gaussian_Binary::gradientDescent()
-{
-  return;
 }

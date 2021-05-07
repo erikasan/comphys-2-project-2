@@ -23,6 +23,5 @@ int main(int nargs, char **args)
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
 
   system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers));
-  //system->setWaveFunction(new SimpleGaussian(system, 1));
   return 0;
 }
