@@ -25,6 +25,9 @@ public:
     void setLearningRate(double learningRate);
 
 
+    // TEMPORARY
+    virtual void test_weights_biases(){return;};
+
 
 
 protected:

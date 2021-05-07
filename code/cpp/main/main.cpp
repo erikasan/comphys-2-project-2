@@ -23,5 +23,6 @@ int main(int nargs, char **args)
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
 
   system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers));
+  system->getWaveFunction()->test_weights_biases();
   return 0;
 }
