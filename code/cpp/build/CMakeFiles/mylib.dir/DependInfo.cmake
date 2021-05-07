@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/randomuniform.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/InitialStates/randomuniform.o"
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/randomuniform2.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/InitialStates/randomuniform2.o"
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o"
+  "/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o"
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o"
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/metropolis_langevin.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/metropolis_langevin.o"
   "/home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.cpp" "/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles/mylib.dir/particle.o"

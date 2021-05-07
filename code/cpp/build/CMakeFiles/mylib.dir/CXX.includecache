@@ -103,8 +103,32 @@ random
 -
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.cpp
+wavefunction.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 gaussian_binary.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
+../system.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h
+../particle.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
+../sampler.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+random
+-
+iostream
+-
+
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
+wavefunction.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp
+simplegaussian.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
+cmath
+-
+cassert
+-
 wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 ../system.h
@@ -113,8 +137,10 @@ wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
 ../sampler.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+iostream
+-
 
-/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
 wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 

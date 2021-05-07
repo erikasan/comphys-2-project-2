@@ -242,6 +242,21 @@ WaveFunctions/gaussian_binary.s:
 .PHONY : WaveFunctions/gaussian_binary.s
 
 # target to build an object file
+WaveFunctions/simplegaussian.o:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o
+.PHONY : WaveFunctions/simplegaussian.o
+
+# target to preprocess a source file
+WaveFunctions/simplegaussian.i:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.i
+.PHONY : WaveFunctions/simplegaussian.i
+
+# target to generate assembly for a file
+WaveFunctions/simplegaussian.s:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.s
+.PHONY : WaveFunctions/simplegaussian.s
+
+# target to build an object file
 WaveFunctions/wavefunction.o:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o
 .PHONY : WaveFunctions/wavefunction.o
@@ -362,6 +377,9 @@ help:
 	@echo "... WaveFunctions/gaussian_binary.o"
 	@echo "... WaveFunctions/gaussian_binary.i"
 	@echo "... WaveFunctions/gaussian_binary.s"
+	@echo "... WaveFunctions/simplegaussian.o"
+	@echo "... WaveFunctions/simplegaussian.i"
+	@echo "... WaveFunctions/simplegaussian.s"
 	@echo "... WaveFunctions/wavefunction.o"
 	@echo "... WaveFunctions/wavefunction.i"
 	@echo "... WaveFunctions/wavefunction.s"

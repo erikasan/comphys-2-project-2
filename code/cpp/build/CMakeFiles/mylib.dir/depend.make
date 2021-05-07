@@ -48,6 +48,14 @@ CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../particle.h
 CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../sampler.h
 CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o: ../system.h
 
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../Math/random.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/simplegaussian.cpp
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/simplegaussian.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/wavefunction.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../particle.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../sampler.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../system.h
+
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: ../WaveFunctions/wavefunction.cpp
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: ../WaveFunctions/wavefunction.h
 

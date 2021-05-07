@@ -22,6 +22,10 @@ random
 wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
+wavefunction.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 vector
 -
@@ -39,6 +43,8 @@ vector
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/randomuniform.h
 ../Math/random.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/Math/random.h
+../WaveFunctions/simplegaussian.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
 vector

@@ -5,6 +5,9 @@
 #include "../InitialStates/randomuniform.h"
 #include "../Math/random.h"
 
+#include "../WaveFunctions/simplegaussian.h"
+
+
 int main(int nargs, char **args)
 {
 
@@ -12,9 +15,14 @@ int main(int nargs, char **args)
 
   int numberOfDimensions = 2;
   int numberOfParticles  = 2;
+  int numHiddenLayers    = 2;
 
   System *system;
   system = new System(seed);
 
+  system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
+
+  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers));
+  //system->setWaveFunction(new SimpleGaussian(system, 1));
   return 0;
 }

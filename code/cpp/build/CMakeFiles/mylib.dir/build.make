@@ -321,9 +321,33 @@ CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o.provides: CMakeFiles/mylib.
 CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o.provides.build: CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o
 
 
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: CMakeFiles/mylib.dir/flags.make
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o: ../WaveFunctions/simplegaussian.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o -c /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp
+
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp > CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.i
+
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp -o CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.s
+
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.requires:
+
+.PHONY : CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.requires
+
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.provides: CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.requires
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.provides.build
+.PHONY : CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.provides
+
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.provides.build: CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o
+
+
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: CMakeFiles/mylib.dir/flags.make
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o: ../WaveFunctions/wavefunction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o -c /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.cpp
 
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.i: cmake_force
@@ -358,6 +382,7 @@ mylib_OBJECTS = \
 "CMakeFiles/mylib.dir/InitialStates/randomuniform.o" \
 "CMakeFiles/mylib.dir/InitialStates/randomuniform2.o" \
 "CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o" \
+"CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o" \
 "CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o"
 
 # External object files for target mylib
@@ -374,10 +399,11 @@ libmylib.a: CMakeFiles/mylib.dir/InitialStates/initialstate.o
 libmylib.a: CMakeFiles/mylib.dir/InitialStates/randomuniform.o
 libmylib.a: CMakeFiles/mylib.dir/InitialStates/randomuniform2.o
 libmylib.a: CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o
+libmylib.a: CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o
 libmylib.a: CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o
 libmylib.a: CMakeFiles/mylib.dir/build.make
 libmylib.a: CMakeFiles/mylib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libmylib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libmylib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/mylib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mylib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -397,6 +423,7 @@ CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/InitialStates/initialstate.o
 CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/InitialStates/randomuniform.o.requires
 CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/InitialStates/randomuniform2.o.requires
 CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o.requires
+CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o.requires
 CMakeFiles/mylib.dir/requires: CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o.requires
 
 .PHONY : CMakeFiles/mylib.dir/requires

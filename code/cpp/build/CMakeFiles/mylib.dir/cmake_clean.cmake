@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mylib.dir/InitialStates/randomuniform.o"
   "CMakeFiles/mylib.dir/InitialStates/randomuniform2.o"
   "CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o"
+  "CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o"
   "CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o"
   "libmylib.pdb"
   "libmylib.a"

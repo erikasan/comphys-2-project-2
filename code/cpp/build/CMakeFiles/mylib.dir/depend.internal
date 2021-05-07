@@ -48,6 +48,14 @@ CMakeFiles/mylib.dir/WaveFunctions/gaussian_binary.o
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h
+CMakeFiles/mylib.dir/WaveFunctions/simplegaussian.o
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Math/random.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h
 CMakeFiles/mylib.dir/WaveFunctions/wavefunction.o
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.cpp
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
