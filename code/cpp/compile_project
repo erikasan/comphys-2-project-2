@@ -13,7 +13,4 @@ cmake ../
 make -j2
 
 # Move the executable to the top-directory
-# mv vmc ..
-# mv metropolis_langevin ..
-# mv gradient_descent ..
-# mv monster_GD ..
+mv vmc ..

@@ -45,3 +45,9 @@ find_package(OpenMP REQUIRED)
 
 
 # Create executables
+
+add_executable(vmc main/main.cpp)
+
+# Link libraries
+
+target_link_libraries(vmc mylib)

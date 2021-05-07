@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/erikasan/Documents/comphys-2-project-2/code/cpp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,6 +122,19 @@ mylib: cmake_check_build_system
 mylib/fast:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
+
+#=============================================================================
+# Target rules for targets named vmc
+
+# Build rule for target.
+vmc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vmc
+.PHONY : vmc
+
+# fast build rule for target.
+vmc/fast:
+	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/build
+.PHONY : vmc/fast
 
 # target to build an object file
 GDsampler.o:
@@ -244,6 +257,21 @@ WaveFunctions/wavefunction.s:
 .PHONY : WaveFunctions/wavefunction.s
 
 # target to build an object file
+main/main.o:
+	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.o
+.PHONY : main/main.o
+
+# target to preprocess a source file
+main/main.i:
+	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.i
+.PHONY : main/main.i
+
+# target to generate assembly for a file
+main/main.s:
+	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/main/main.s
+.PHONY : main/main.s
+
+# target to build an object file
 metropolis_langevin.o:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/metropolis_langevin.o
 .PHONY : metropolis_langevin.o
@@ -309,9 +337,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... mylib"
 	@echo "... edit_cache"
+	@echo "... mylib"
+	@echo "... rebuild_cache"
+	@echo "... vmc"
 	@echo "... GDsampler.o"
 	@echo "... GDsampler.i"
 	@echo "... GDsampler.s"
@@ -336,6 +365,9 @@ help:
 	@echo "... WaveFunctions/wavefunction.o"
 	@echo "... WaveFunctions/wavefunction.i"
 	@echo "... WaveFunctions/wavefunction.s"
+	@echo "... main/main.o"
+	@echo "... main/main.i"
+	@echo "... main/main.s"
 	@echo "... metropolis_langevin.o"
 	@echo "... metropolis_langevin.i"
 	@echo "... metropolis_langevin.s"
