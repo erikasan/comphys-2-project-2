@@ -1,9 +1,9 @@
 #pragma once
 #include "wavefunction.h"
 
-class RBM : public WaveFunction{
+class Gaussian_Binary : public WaveFunction{
 public:
-  RBM(class System *system);
+  Gaussian_Binary(class System *system);
 
 private:
   // Weights and biases should be private variables
