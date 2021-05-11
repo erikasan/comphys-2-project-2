@@ -13,40 +13,61 @@ using namespace std;
 
 Gaussian_Binary::Gaussian_Binary(System *system, int N) : WaveFunction(system)
 {
-  int M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
-
-  m_M = M;
+  m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
 
-  double W[M*N];
-  double a[M];
-  double b[N];
+  m_W = new double[m_M*m_N];
+  m_a = new double[m_M];
+  m_b = new double[m_N];
 
   mt19937_64 generator;
   normal_distribution<double> distribution(0, 0.001);
 
   size_t i, j;
 
-  for (i = 0; i < M; i++){
-    a[i] = distribution(generator);
-    for (j = 0; j < N; j++){
-      W[i*N + j] = distribution(generator);
+  for (i = 0; i < m_M; i++){
+    m_a[i] = 1;//distribution(generator);
+    for (j = 0; j < m_N; j++){
+      m_W[i*m_N + j] = 1;//distribution(generator);
     }
   }
 
-  for (j = 0; j < N; j++){
-    b[j] = distribution(generator);
+  for (j = 0; j < m_N; j++){
+    m_b[j] = 1;//distribution(generator);
   }
 
-  m_W = &W[0];
-  m_a = &a[0];
-  m_b = &b[0];
   return;
 }
 
 void Gaussian_Binary::test_weights_biases()
 {
+  size_t i, j;
 
+  cout << "M = " << m_M << endl;
+  cout << "N = " << m_N << endl;
+  cout << endl;
+
+  cout << "W" << endl;
+  for (i = 0; i < m_M; i++){
+    for (j = 0; j < m_N; j++){
+      cout << m_W[i*m_N + j] << " ";
+    }
+    cout << endl;
+  }
+  cout << endl;
+
+  cout << "a" << endl;
+  for (i = 0; i < m_M; i++){
+    cout << m_a[i] << " ";
+  }
+  cout << endl;
+  cout << endl;
+
+  cout << "b" << endl;
+  for (i = 0; i < m_N; i++){
+    cout << m_b[i] << " ";
+  }
+  cout << endl;
   return;
 }
 
