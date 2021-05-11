@@ -115,12 +115,16 @@ gaussian_binary.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
 random
 -
+armadillo
+-
 iostream
 -
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
 wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+armadillo
+-
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.cpp
 simplegaussian.h

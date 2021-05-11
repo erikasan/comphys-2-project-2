@@ -1,5 +1,8 @@
 #pragma once
 #include "wavefunction.h"
+#include <armadillo>
+
+using namespace arma;
 
 class Gaussian_Binary : public WaveFunction{
 public:
@@ -16,9 +19,13 @@ private:
   int m_M = 0;
   int m_N = 0;
 
-  double *m_W = nullptr;
-  double *m_a = nullptr;
-  double *m_b = nullptr;
+  // double *m_W = nullptr;
+  // double *m_a = nullptr;
+  // double *m_b = nullptr;
+
+  mat m_W;
+  vec m_a;
+  vec m_b;
 
 
 };
