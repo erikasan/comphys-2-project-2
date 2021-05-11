@@ -39,6 +39,12 @@ file(
     GLOB SOURCES "Math/*.cpp"
     GLOB SOURCES "WaveFunctions/*.cpp"
 )
+
+find_package(Armadillo REQUIRED)
+include_directories(${ARMADILLO_INCLUDE_DIRS})
+
+
+
 add_library(mylib STATIC ${SOURCES})
 find_package(OpenMP REQUIRED)
 
@@ -51,3 +57,4 @@ add_executable(vmc main/main.cpp)
 # Link libraries
 
 target_link_libraries(vmc mylib)
+target_link_libraries(vmc ${ARMADILLO_LIBRARIES})

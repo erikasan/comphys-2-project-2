@@ -91,6 +91,7 @@ vmc_EXTERNAL_OBJECTS =
 vmc: CMakeFiles/vmc.dir/main/main.o
 vmc: CMakeFiles/vmc.dir/build.make
 vmc: libmylib.a
+vmc: /usr/lib/x86_64-linux-gnu/libarmadillo.so
 vmc: CMakeFiles/vmc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/erikasan/Documents/comphys-2-project-2/code/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vmc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vmc.dir/link.txt --verbose=$(VERBOSE)
