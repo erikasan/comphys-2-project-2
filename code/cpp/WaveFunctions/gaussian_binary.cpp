@@ -18,15 +18,9 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N) : WaveFunction(system)
   m_M = M;
   m_N = N;
 
-  //double W[M][N];
+  double W[M*N];
   double a[M];
   double b[N];
-
-  double **W;
-  W = new double*[M];
-  for (int i = 1; i < M; i++){
-    W[i] = &W[0][i*N];
-  }
 
   mt19937_64 generator;
   normal_distribution<double> distribution(0, 0.001);
@@ -36,7 +30,7 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N) : WaveFunction(system)
   for (i = 0; i < M; i++){
     a[i] = distribution(generator);
     for (j = 0; j < N; j++){
-      W[i][j] = distribution(generator);
+      W[i*N + j] = distribution(generator);
     }
   }
 
@@ -44,26 +38,14 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N) : WaveFunction(system)
     b[j] = distribution(generator);
   }
 
-  *m_W = &W[0][0];
-  m_a  = &a[0];
-  m_b  = &b[0];
+  m_W = &W[0];
+  m_a = &a[0];
+  m_b = &b[0];
   return;
 }
 
 void Gaussian_Binary::test_weights_biases()
 {
-  size_t i, j;
-  // for (i = 0; i < m_M; i++){
-  //   for (j = 0; j < m_N; j++){
-  //     cout << i << " " << j << " " << m_W[i][j];
-  //   }
-  //   cout << endl;
-  // }
-
-  for (i = 0; i < m_M; i++){
-    cout << m_a[i] << " ";
-  }
-  cout << endl;
 
   return;
 }
