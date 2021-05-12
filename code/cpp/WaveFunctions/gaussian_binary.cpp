@@ -73,14 +73,15 @@ double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
 
 double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> particles)
 {
+
   size_t i, j;
 
   vec x(m_M);
 
-  std::vector<double> position;
-
   int numberOfParticles  = m_system->getNumberOfParticles();
   int numberOfDimensions = m_system->getNumberOfDimensions();
+
+  std::vector<double> position;
 
   // Convert position vector to armadillo column vector
   for (i = 0; i < numberOfParticles; i++){
@@ -95,12 +96,33 @@ double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> par
 
 double Gaussian_Binary::gradientTerm(vec x)
 {
-  return 0;
+  double sigma2 = m_sigma*m_sigma;
+  vec e(m_N);
+  vec gradlnpsi(m_M);
+
+  e = 1/(1 + exp(-(m_b + 1/sigma2*(m_W.t()*x))));
+
+  gradlnpsi = 1/sigma2*(m_a - x + m_W*e);
+
+  return dot(gradlnpsi, gradlnpsi);
 }
 
 double Gaussian_Binary::laplacianTerm(vec x)
 {
-  return 0;
+  double sigma2 = m_sigma*m_sigma;
+
+  vec laplacelnpsi(m_M); // For convenience. The actual Laplacian will be the sum over the elements.
+
+  vec g(m_N);
+  vec h(m_N);
+
+  g = exp(-(m_b + 1/sigma2*(m_W.t()*x)));
+
+  h = g/square(1 + g);
+
+  laplacelnpsi = -1/sigma2 + 1/(sigma2*sigma2)*(square(m_W)*h);
+
+  return sum(laplacelnpsi);
 }
 
 

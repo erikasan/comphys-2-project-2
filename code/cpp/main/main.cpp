@@ -11,6 +11,8 @@
 using namespace arma;
 
 
+
+
 int main(int nargs, char **args)
 {
 
@@ -30,6 +32,7 @@ int main(int nargs, char **args)
   system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma));
   //system->getWaveFunction()->test_weights_biases();
 
+  
 
 
   return 0;
