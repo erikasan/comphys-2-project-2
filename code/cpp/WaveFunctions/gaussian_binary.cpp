@@ -71,9 +71,8 @@ double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
   return 0;
 }
 
-double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> particles)
+vec Gaussian_Binary::convertPositionToArmadillo(std::vector<class Particle*> particles)
 {
-
   size_t i, j;
 
   vec x(m_M);
@@ -87,10 +86,15 @@ double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> par
   for (i = 0; i < numberOfParticles; i++){
     position = particles[i]->getPosition();
     for (j = 0; j < numberOfDimensions; j++){
-      x(j) = position[j];
+      x(i + j) = position[j];
     }
   }
+  return x;
+}
 
+double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> particles)
+{
+  vec x = Gaussian_Binary::convertPositionToArmadillo(particles);
   return Gaussian_Binary::gradientTerm(x) + Gaussian_Binary::laplacianTerm(x);
 }
 
@@ -152,7 +156,36 @@ mat Gaussian_Binary::localEnergygrad_W(vec x, double localEnergy)
   return localEnergy*grad_W(x);
 }
 
+void Gaussian_Binary::sample(std::vector<class Particle*> particles, double localEnergy)
+{
+  vec x = Gaussian_Binary::convertPositionToArmadillo(particles);
 
+  m_av_grad_a += Gaussian_Binary::grad_a(x);
+  m_av_grad_b += Gaussian_Binary::grad_b(x);
+  m_av_grad_W += Gaussian_Binary::grad_W(x);
+  m_av_local_energy_grad_a += Gaussian_Binary::localEnergygrad_a(x, localEnergy);
+  m_av_local_energy_grad_b += Gaussian_Binary::localEnergygrad_b(x, localEnergy);
+  m_av_local_energy_grad_W += Gaussian_Binary::localEnergygrad_W(x, localEnergy);
+  return;
+}
+
+void Gaussian_Binary::computeAverages(double steps)
+{
+  m_av_grad_a /= steps;
+  m_av_grad_b /= steps;
+  m_av_grad_W /= steps;
+  m_av_local_energy_grad_a /= steps;
+  m_av_local_energy_grad_b /= steps;
+  m_av_local_energy_grad_W /= steps;
+  return;
+}
+
+void Gaussian_Binary::gradientDescent()
+{
+  double localEnergy = m_system->getSampler()->getEnergy();
+  
+  return;
+}
 
 std::vector<double> Gaussian_Binary::quantumForce(std::vector<class Particle*> particles)
 {
