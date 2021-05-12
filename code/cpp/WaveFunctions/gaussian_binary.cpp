@@ -91,7 +91,7 @@ double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> par
     }
   }
 
-  return -0.5*(Gaussian_Binary::gradientTerm(x) + Gaussian_Binary::laplacianTerm(x));
+  return Gaussian_Binary::gradientTerm(x) + Gaussian_Binary::laplacianTerm(x);
 }
 
 double Gaussian_Binary::gradientTerm(vec x)
