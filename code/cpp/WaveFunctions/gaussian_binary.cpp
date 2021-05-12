@@ -19,7 +19,7 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunc
   m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
 
-  m_sigma = sigma;
+  m_sigma2 = sigma*sigma;
 
   m_W.set_size(m_M, m_N);
   m_a.set_size(m_M);
@@ -96,34 +96,62 @@ double Gaussian_Binary::computeDoubleDerivative(std::vector<class Particle*> par
 
 double Gaussian_Binary::gradientTerm(vec x)
 {
-  double sigma2 = m_sigma*m_sigma;
   vec e(m_N);
   vec gradlnpsi(m_M);
 
-  e = 1/(1 + exp(-(m_b + 1/sigma2*(m_W.t()*x))));
+  e = 1/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
 
-  gradlnpsi = 1/sigma2*(m_a - x + m_W*e);
+  gradlnpsi = 1/m_sigma2*(m_a - x + m_W*e);
 
   return dot(gradlnpsi, gradlnpsi);
 }
 
 double Gaussian_Binary::laplacianTerm(vec x)
 {
-  double sigma2 = m_sigma*m_sigma;
-
   vec laplacelnpsi(m_M); // For convenience. The actual Laplacian will be the sum over the elements.
 
   vec g(m_N);
   vec h(m_N);
 
-  g = exp(-(m_b + 1/sigma2*(m_W.t()*x)));
+  g = exp(-(m_b + 1/m_sigma2*(m_W.t()*x)));
 
   h = g/square(1 + g);
 
-  laplacelnpsi = -1/sigma2 + 1/(sigma2*sigma2)*(square(m_W)*h);
+  laplacelnpsi = -1/m_sigma2 + 1/(m_sigma2*m_sigma2)*(square(m_W)*h);
 
   return sum(laplacelnpsi);
 }
+
+vec Gaussian_Binary::grad_a(vec x)
+{
+  return (x - m_a)/m_sigma2;
+}
+
+vec Gaussian_Binary::localEnergygrad_a(vec x, double localEnergy)
+{
+  return localEnergy*grad_a(x);
+}
+
+vec Gaussian_Binary::grad_b(vec x)
+{
+  return 1/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
+}
+
+vec Gaussian_Binary::localEnergygrad_b(vec x, double localEnergy)
+{
+  return localEnergy*grad_b(x);
+}
+
+mat Gaussian_Binary::grad_W(vec x)
+{
+  return x*(grad_b(x).t())/m_sigma2;
+}
+
+mat Gaussian_Binary::localEnergygrad_W(vec x, double localEnergy)
+{
+  return localEnergy*grad_W(x);
+}
+
 
 
 std::vector<double> Gaussian_Binary::quantumForce(std::vector<class Particle*> particles)

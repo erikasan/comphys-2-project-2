@@ -13,6 +13,18 @@ public:
   double gradientTerm(vec x);
   double laplacianTerm(vec x);
 
+  //void sample(std::vector<class Particle*> particles, double localEnergy);
+
+  vec grad_a(vec x);
+  vec grad_b(vec x);
+  mat grad_W(vec x);
+  vec localEnergygrad_a(vec x, double localEnergy);
+  vec localEnergygrad_b(vec x, double localEnergy);
+  mat localEnergygrad_W(vec x, double localEnergy);
+
+  // void computeAverages(double steps);
+  // void gradientDescent();
+
   std::vector<double> quantumForce(std::vector<class Particle*> particles);
 
   // TEMPORARY!!!!
@@ -22,7 +34,7 @@ private:
   int m_M = 0;
   int m_N = 0;
 
-  double m_sigma = 0;
+  double m_sigma2 = 0;
 
   mat m_W;
   vec m_a;
