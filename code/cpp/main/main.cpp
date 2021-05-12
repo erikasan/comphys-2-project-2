@@ -20,13 +20,15 @@ int main(int nargs, char **args)
   int numberOfParticles  = 2;
   int numHiddenLayers    = 2;
 
+  double sigma = 1;
+
   System *system;
   system = new System(seed);
 
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
 
-  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers));
-  system->getWaveFunction()->test_weights_biases();
+  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma));
+  //system->getWaveFunction()->test_weights_biases();
 
 
 
