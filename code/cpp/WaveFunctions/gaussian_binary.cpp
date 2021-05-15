@@ -16,6 +16,7 @@ using namespace std;
 
 Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunction(system)
 {
+  cout << "Hello" << endl;
   m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
 
@@ -44,13 +45,10 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunc
     m_b(j) = distribution(generator);
   }
 
-  return;
 }
 
 void Gaussian_Binary::test_weights_biases()
 {
-  size_t i, j;
-
   cout << "M = " << m_M << endl;
   cout << "N = " << m_N << endl;
   cout << endl;
@@ -68,7 +66,13 @@ void Gaussian_Binary::test_weights_biases()
 
 double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
 {
-  return 0;
+  vec x = Gaussian_Binary::convertPositionToArmadillo(particles);
+
+  vec x_minus_a = x - m_a;
+
+  vec tmp = 1 + exp(m_b + 1/m_sigma2*(x*m_W.t()));
+
+  return exp(-1/m_sigma2*dot(x_minus_a, x_minus_a))*prod(tmp);
 }
 
 vec Gaussian_Binary::convertPositionToArmadillo(std::vector<class Particle*> particles)
@@ -183,7 +187,27 @@ void Gaussian_Binary::computeAverages(double steps)
 void Gaussian_Binary::gradientDescent()
 {
   double localEnergy = m_system->getSampler()->getEnergy();
-  
+  vec a_new, b_new;
+  mat W_new;
+
+  vec alpha_new(m_M + m_N + m_M*m_N), alpha_old(m_M + m_N + m_M*m_N);
+
+  alpha_old.subvec(0, m_M - 1)                         = m_a;
+  alpha_old.subvec(m_M, m_M + m_N - 1)                 = m_b;
+  alpha_old.subvec(m_M + m_N, m_M + m_N + m_M*m_N - 1) = m_W;
+
+  m_a = m_a - m_learningRate*2*(m_av_local_energy_grad_a - localEnergy*m_av_grad_a);
+  m_b = m_b - m_learningRate*2*(m_av_local_energy_grad_b - localEnergy*m_av_grad_b);
+  m_W = m_W - m_learningRate*2*(m_av_local_energy_grad_W - localEnergy*m_av_grad_W);
+
+  alpha_new.subvec(0, m_M - 1)                         = m_a;
+  alpha_new.subvec(m_M, m_M + m_N - 1)                 = m_b;
+  alpha_new.subvec(m_M + m_N, m_M + m_N + m_M*m_N - 1) = m_W;
+
+  if (norm(alpha_new - alpha_old) < m_tol){
+    m_system->stopGradientDescent();
+  }
+
   return;
 }
 

@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/GDsampler.h
+sampler.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/hamiltonian.h
+vector
+-
+
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/harmonicoscillator.h
+hamiltonian.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/hamiltonian.h
+vector
+-
+
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/initialstate.h
 vector
 -
@@ -39,19 +53,39 @@ vector
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
 ../WaveFunctions/gaussian_binary.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
+../Hamiltonians/harmonicoscillator.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/harmonicoscillator.h
 ../InitialStates/initialstate.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/initialstate.h
 ../InitialStates/randomuniform.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/InitialStates/randomuniform.h
 ../Math/random.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/Math/random.h
+../sampler.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+../GDsampler.h
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/GDsampler.h
 ../WaveFunctions/simplegaussian.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
 armadillo
 -
+iostream
+-
+string
+-
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
 vector
+-
+
+/home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
+vector
+-
+string
+-
+fstream
+-
+chrono
 -
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h

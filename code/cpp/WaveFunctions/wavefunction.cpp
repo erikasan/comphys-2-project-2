@@ -1,7 +1,10 @@
 #include "wavefunction.h"
+#include <iostream>
+using namespace std;
 
 WaveFunction::WaveFunction(System* system) {
-    m_system = system;
+  m_system = system;
+  cout << "Hello" << endl;
 }
 
 void WaveFunction::setTolerance(double tol){

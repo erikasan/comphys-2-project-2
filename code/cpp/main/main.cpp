@@ -1,13 +1,20 @@
 #include "../system.h"
 #include "../particle.h"
 #include "../WaveFunctions/gaussian_binary.h"
+#include "../Hamiltonians/harmonicoscillator.h"
 #include "../InitialStates/initialstate.h"
 #include "../InitialStates/randomuniform.h"
 #include "../Math/random.h"
+#include "../sampler.h"
+#include "../GDsampler.h"
 
 #include "../WaveFunctions/simplegaussian.h"
 
 #include <armadillo>
+#include <iostream>
+#include <string>
+
+using namespace std;
 using namespace arma;
 
 
@@ -21,19 +28,31 @@ int main(int nargs, char **args)
   int numberOfDimensions = 2;
   int numberOfParticles  = 2;
   int numHiddenLayers    = 2;
+  int numberOfSteps      = (int) 1e6;
+  int equilibration      = (int) 1e5;
+  double stepLength      = 0.1;
+  double tol             = 1e-2;
+  double learningRate    = 0.01;
+  int maxIter            = 20;
+  double sigma           = 1;
 
-  double sigma = 1;
+  string filename_blocking = "no";
+  string path= "../../../output/";
 
   System *system;
   system = new System(seed);
+  system->setOmega(1);
 
+  // system->setPath(path);
+  // system->m_energyfile = filename_blocking;
+
+  system->setSampler(new Sampler(system));
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
-
   system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma));
-  //system->getWaveFunction()->test_weights_biases();
-
-  
-
+  system->setHamiltonian(new HarmonicOscillator(system, 1));
+  system->setEquilibrationSteps(equilibration);
+  system->setStepLength(stepLength);
+  system->getSampler()->setSamplePosition(true);
 
   return 0;
 }

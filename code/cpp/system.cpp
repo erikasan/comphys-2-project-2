@@ -32,7 +32,8 @@ bool System::metropolisStep() {
      int particle_id = m_random->nextInt(m_numberOfParticles-1);
 
      //keep old position & wf
-     double wf_old = m_waveFunction->evaluate(m_particles,particle_id);
+     //double wf_old = m_waveFunction->evaluate(m_particles,particle_id);
+     double wf_old = m_waveFunction->evaluate(m_particles);
      std::vector<double> position = m_particles[particle_id]->getPosition();
 
      //Move particle randomly
@@ -40,7 +41,8 @@ bool System::metropolisStep() {
        m_particles[particle_id]->adjustPosition(2*(m_random->nextDouble() - 0.5)*m_stepLength,i);
      }
      m_waveFunction->updateDistances(m_particles,particle_id);
-     double wf_new = m_waveFunction->evaluate(m_particles,particle_id);
+     //double wf_new = m_waveFunction->evaluate(m_particles,particle_id);
+     double wf_new = m_waveFunction->evaluate(m_particles);
 
      //Perform Metropolis test
      if ((wf_new*wf_new)/(wf_old*wf_old) > m_random->nextDouble() ){
