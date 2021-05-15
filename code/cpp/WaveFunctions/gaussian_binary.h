@@ -25,7 +25,7 @@ public:
   mat localEnergygrad_W(vec x, double localEnergy);
 
   vec convertPositionToArmadillo(std::vector<class Particle*> particles);
-  
+
   std::vector<double> quantumForce(std::vector<class Particle*> particles);
 
   // TEMPORARY!!!!
@@ -41,11 +41,11 @@ private:
   vec m_a;
   vec m_b;
 
-  double m_av_grad_a = 0;
-  double m_av_grad_b = 0;
-  double m_av_grad_W = 0;
-  double m_av_local_energy_grad_a = 0;
-  double m_av_local_energy_grad_b = 0;
-  double m_av_local_energy_grad_W = 0;
+  vec m_av_grad_a;
+  vec m_av_grad_b;
+  mat m_av_grad_W;
+  vec m_av_local_energy_grad_a;
+  vec m_av_local_energy_grad_b;
+  mat m_av_local_energy_grad_W;
 
 };
