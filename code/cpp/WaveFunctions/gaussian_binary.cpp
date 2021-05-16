@@ -16,7 +16,6 @@ using namespace std;
 
 Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunction(system)
 {
-  cout << "Hello" << endl;
   m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
 
@@ -25,6 +24,13 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunc
   m_W.set_size(m_M, m_N);
   m_a.set_size(m_M);
   m_b.set_size(m_N);
+
+  m_av_grad_a.zeros(m_M);
+  m_av_grad_b.zeros(m_N);
+  m_av_grad_W.zeros(m_M, m_N);
+  m_av_local_energy_grad_a.zeros(m_M);
+  m_av_local_energy_grad_b.zeros(m_N);
+  m_av_local_energy_grad_W.zeros(m_M, m_N);
 
   mt19937_64 generator;
   normal_distribution<double> distribution(0, 0.001);
@@ -70,9 +76,9 @@ double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
 
   vec x_minus_a = x - m_a;
 
-  vec tmp = 1 + exp(m_b + 1/m_sigma2*(x*m_W.t()));
+  vec tmp = 1 + exp(m_b + 1/m_sigma2*(m_W.t()*x));
 
-  return exp(-1/m_sigma2*dot(x_minus_a, x_minus_a))*prod(tmp);
+  return exp(-1/(2*m_sigma2)*dot(x_minus_a, x_minus_a))*prod(tmp);
 }
 
 vec Gaussian_Binary::convertPositionToArmadillo(std::vector<class Particle*> particles)
@@ -87,7 +93,7 @@ vec Gaussian_Binary::convertPositionToArmadillo(std::vector<class Particle*> par
   std::vector<double> position;
 
   // Convert position vector to armadillo column vector
-  for (i = 0; i < numberOfParticles; i++){
+  for (i = 0; i < numberOfParticles; i += numberOfDimensions){
     position = particles[i]->getPosition();
     for (j = 0; j < numberOfDimensions; j++){
       x(i + j) = position[j];
@@ -142,7 +148,7 @@ vec Gaussian_Binary::localEnergygrad_a(vec x, double localEnergy)
 
 vec Gaussian_Binary::grad_b(vec x)
 {
-  return 1/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
+  return 0.5/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
 }
 
 vec Gaussian_Binary::localEnergygrad_b(vec x, double localEnergy)
@@ -187,26 +193,29 @@ void Gaussian_Binary::computeAverages(double steps)
 void Gaussian_Binary::gradientDescent()
 {
   double localEnergy = m_system->getSampler()->getEnergy();
+  cout << localEnergy << endl;
   vec a_new, b_new;
   mat W_new;
 
-  vec alpha_new(m_M + m_N + m_M*m_N), alpha_old(m_M + m_N + m_M*m_N);
+  a_new = m_a - m_learningRate*2*(m_av_local_energy_grad_a - localEnergy*m_av_grad_a);
+  b_new = m_b - m_learningRate*2*(m_av_local_energy_grad_b - localEnergy*m_av_grad_b);
+  W_new = m_W - m_learningRate*2*(m_av_local_energy_grad_W - localEnergy*m_av_grad_W);
 
-  alpha_old.subvec(0, m_M - 1)                         = m_a;
-  alpha_old.subvec(m_M, m_M + m_N - 1)                 = m_b;
-  alpha_old.subvec(m_M + m_N, m_M + m_N + m_M*m_N - 1) = m_W;
 
-  m_a = m_a - m_learningRate*2*(m_av_local_energy_grad_a - localEnergy*m_av_grad_a);
-  m_b = m_b - m_learningRate*2*(m_av_local_energy_grad_b - localEnergy*m_av_grad_b);
-  m_W = m_W - m_learningRate*2*(m_av_local_energy_grad_W - localEnergy*m_av_grad_W);
-
-  alpha_new.subvec(0, m_M - 1)                         = m_a;
-  alpha_new.subvec(m_M, m_M + m_N - 1)                 = m_b;
-  alpha_new.subvec(m_M + m_N, m_M + m_N + m_M*m_N - 1) = m_W;
-
-  if (norm(alpha_new - alpha_old) < m_tol){
+  if (approx_equal(a_new, m_a, "absdiff", m_tol) & approx_equal(b_new, m_b, "absdiff", m_tol) & approx_equal(W_new, m_W, "absdiff", m_tol)){
     m_system->stopGradientDescent();
   }
+
+  m_a = a_new;
+  m_b = b_new;
+  m_W = W_new;
+
+  m_av_grad_a.zeros();
+  m_av_grad_b.zeros();
+  m_av_grad_W.zeros();
+  m_av_local_energy_grad_a.zeros();
+  m_av_local_energy_grad_b.zeros();
+  m_av_local_energy_grad_W.zeros();
 
   return;
 }
