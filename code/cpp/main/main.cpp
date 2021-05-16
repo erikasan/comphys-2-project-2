@@ -31,8 +31,8 @@ int main(int nargs, char **args)
   int numberOfSteps      = (int) 1e6;
   int equilibration      = (int) 1e5;
   double stepLength      = 0.1;
-  double tol             = 1e-6;
-  double learningRate    = 0.001;
+  double tol             = 1e-8;
+  double learningRate    = 0.0001;
   int maxIter            = 20;
   double sigma           = 1;
 
@@ -54,6 +54,7 @@ int main(int nargs, char **args)
   system->setMetropolisSteps(numberOfSteps);
   system->setStepLength(stepLength);
   system->gradientDescent(tol, learningRate, maxIter);
+
   cout << "Finished!" << endl;
   return 0;
 }

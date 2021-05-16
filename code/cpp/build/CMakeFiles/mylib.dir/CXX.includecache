@@ -19,6 +19,8 @@ particle.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
 WaveFunctions/wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+iostream
+-
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/GDsampler.h
 sampler.h
@@ -151,8 +153,6 @@ wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.cpp
 wavefunction.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
-iostream
--
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 vector

@@ -53,23 +53,6 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunc
 
 }
 
-void Gaussian_Binary::test_weights_biases()
-{
-  cout << "M = " << m_M << endl;
-  cout << "N = " << m_N << endl;
-  cout << endl;
-
-  cout << "W" << endl;
-  cout << m_W << endl;
-
-  cout << "a" << endl;
-  cout << m_a << endl;
-
-  cout << "b" << endl;
-  cout << m_b << endl;
-  return;
-}
-
 double Gaussian_Binary::evaluate(std::vector<class Particle*> particles)
 {
   vec x = Gaussian_Binary::convertPositionToArmadillo(particles);
@@ -93,10 +76,10 @@ vec Gaussian_Binary::convertPositionToArmadillo(std::vector<class Particle*> par
   std::vector<double> position;
 
   // Convert position vector to armadillo column vector
-  for (i = 0; i < numberOfParticles; i += numberOfDimensions){
+  for (i = 0; i < numberOfParticles; i++){
     position = particles[i]->getPosition();
     for (j = 0; j < numberOfDimensions; j++){
-      x(i + j) = position[j];
+      x(i*numberOfDimensions + j) = position[j];
     }
   }
   return x;
@@ -148,7 +131,7 @@ vec Gaussian_Binary::localEnergygrad_a(vec x, double localEnergy)
 
 vec Gaussian_Binary::grad_b(vec x)
 {
-  return 0.5/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
+  return 1/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
 }
 
 vec Gaussian_Binary::localEnergygrad_b(vec x, double localEnergy)
@@ -200,6 +183,7 @@ void Gaussian_Binary::gradientDescent()
   a_new = m_a - m_learningRate*2*(m_av_local_energy_grad_a - localEnergy*m_av_grad_a);
   b_new = m_b - m_learningRate*2*(m_av_local_energy_grad_b - localEnergy*m_av_grad_b);
   W_new = m_W - m_learningRate*2*(m_av_local_energy_grad_W - localEnergy*m_av_grad_W);
+
 
 
   if (approx_equal(a_new, m_a, "absdiff", m_tol) & approx_equal(b_new, m_b, "absdiff", m_tol) & approx_equal(W_new, m_W, "absdiff", m_tol)){

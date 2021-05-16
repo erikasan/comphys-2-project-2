@@ -28,9 +28,6 @@ public:
 
   std::vector<double> quantumForce(std::vector<class Particle*> particles);
 
-  // TEMPORARY!!!!
-  void test_weights_biases();
-
 private:
   int m_M = 0;
   int m_N = 0;

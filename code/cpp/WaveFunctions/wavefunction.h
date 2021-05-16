@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 
-
 class WaveFunction {
 public:
     WaveFunction(class System* system);
@@ -23,10 +22,6 @@ public:
     virtual void gradientDescent(){return;}
     void setTolerance(double tol);
     void setLearningRate(double learningRate);
-
-
-    // TEMPORARY
-    virtual void test_weights_biases(){return;};
 
 
 
