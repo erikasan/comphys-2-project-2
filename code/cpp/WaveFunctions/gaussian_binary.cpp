@@ -176,7 +176,7 @@ void Gaussian_Binary::computeAverages(double steps)
 void Gaussian_Binary::gradientDescent()
 {
   double localEnergy = m_system->getSampler()->getEnergy();
-  cout << localEnergy << endl;
+  //cout << localEnergy << endl;
   vec a_new, b_new;
   mat W_new;
 
@@ -206,6 +206,21 @@ void Gaussian_Binary::gradientDescent()
 
 std::vector<double> Gaussian_Binary::quantumForce(std::vector<class Particle*> particles)
 {
+  size_t i;
   std::vector<double> qForce = std::vector<double>();
+  qForce.reserve(m_M);
+
+  vec x = Gaussian_Binary::convertPositionToArmadillo(particles);
+  vec e(m_N);
+  vec gradlnpsi(m_M);
+
+  e = 1/(1 + exp(-(m_b + 1/m_sigma2*(m_W.t()*x))));
+
+  gradlnpsi = 1/m_sigma2*(m_a - x + m_W*e);
+
+  for (i = 0; i < m_M; i++){
+    qForce[i] = gradlnpsi(i);
+  }
+
   return qForce;
 }

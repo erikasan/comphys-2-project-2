@@ -53,8 +53,12 @@ find_package(OpenMP REQUIRED)
 # Create executables
 
 add_executable(vmc main/main.cpp)
+add_executable(importance_sampling main/importance_sampling.cpp)
 
 # Link libraries
 
 target_link_libraries(vmc mylib)
 target_link_libraries(vmc ${ARMADILLO_LIBRARIES})
+
+target_link_libraries(importance_sampling mylib)
+target_link_libraries(importance_sampling ${ARMADILLO_LIBRARIES})

@@ -23,7 +23,8 @@ bool MetropolisLangevin::metropolisStep(){
   //Evaluate old wave function, keep old position, evaluate quantum force
   double wf_old = m_waveFunction->evaluate(m_particles,particle_id);
   std::vector<double> position = m_particles[particle_id]->getPosition(); //old position
-  std::vector<double> quantumForceOld = m_waveFunction->quantumForce(m_particles,particle_id);
+  //std::vector<double> quantumForceOld = m_waveFunction->quantumForce(m_particles,particle_id);
+  std::vector<double> quantumForceOld = m_waveFunction->quantumForce(m_particles);
   double adjustment = 0;
   //For each dimension, move particle
   for (int i = 0; i < m_numberOfDimensions; i++){
@@ -35,7 +36,8 @@ bool MetropolisLangevin::metropolisStep(){
   //Update position, evaluate new wave function and quantum force
   std::vector<double> newPosition = m_particles[particle_id]->getPosition();
   double wf_new = m_waveFunction->evaluate(m_particles,particle_id);
-  std::vector<double> quantumForceNew = m_waveFunction->quantumForce(m_particles,particle_id);
+  //std::vector<double> quantumForceNew = m_waveFunction->quantumForce(m_particles,particle_id);
+  std::vector<double> quantumForceNew = m_waveFunction->quantumForce(m_particles);
 
   //Evaluate greens function
   double green = 0;
