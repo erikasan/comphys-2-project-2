@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/coulomb_importance_sampling.dir/main/coulomb_importance_sampling.o  -o coulomb_importance_sampling libmylib.a -larmadillo 

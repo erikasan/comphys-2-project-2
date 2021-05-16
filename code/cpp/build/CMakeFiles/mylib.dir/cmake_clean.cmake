@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mylib.dir/particle.o"
   "CMakeFiles/mylib.dir/sampler.o"
   "CMakeFiles/mylib.dir/system.o"
+  "CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o"
   "CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o"
   "CMakeFiles/mylib.dir/Hamiltonians/harmonicoscillator.o"
   "CMakeFiles/mylib.dir/InitialStates/initialstate.o"

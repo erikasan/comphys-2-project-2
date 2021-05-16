@@ -176,7 +176,7 @@ void Gaussian_Binary::computeAverages(double steps)
 void Gaussian_Binary::gradientDescent()
 {
   double localEnergy = m_system->getSampler()->getEnergy();
-  //cout << localEnergy << endl;
+  cout << localEnergy << endl;
   vec a_new, b_new;
   mat W_new;
 

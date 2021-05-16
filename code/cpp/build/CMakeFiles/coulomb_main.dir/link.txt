@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/coulomb_main.dir/main/coulomb_main.o  -o coulomb_main libmylib.a -larmadillo 

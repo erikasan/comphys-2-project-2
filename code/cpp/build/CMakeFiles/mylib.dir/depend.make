@@ -9,6 +9,15 @@ CMakeFiles/mylib.dir/GDsampler.o: ../particle.h
 CMakeFiles/mylib.dir/GDsampler.o: ../sampler.h
 CMakeFiles/mylib.dir/GDsampler.o: ../system.h
 
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../Hamiltonians/HO_with_coulomb.cpp
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../Hamiltonians/HO_with_coulomb.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../Hamiltonians/hamiltonian.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../Hamiltonians/harmonicoscillator.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../Math/random.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../WaveFunctions/wavefunction.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../particle.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o: ../system.h
+
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Hamiltonians/hamiltonian.cpp
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Hamiltonians/hamiltonian.h
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o: ../Math/random.h

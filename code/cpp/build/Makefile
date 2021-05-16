@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/erikasan/Documents/comphys-2-project-2/code/cpp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named importance_sampling
+# Target rules for targets named vmc
 
 # Build rule for target.
-importance_sampling: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 importance_sampling
-.PHONY : importance_sampling
+vmc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vmc
+.PHONY : vmc
 
 # fast build rule for target.
-importance_sampling/fast:
-	$(MAKE) -f CMakeFiles/importance_sampling.dir/build.make CMakeFiles/importance_sampling.dir/build
-.PHONY : importance_sampling/fast
+vmc/fast:
+	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/build
+.PHONY : vmc/fast
 
 #=============================================================================
 # Target rules for targets named mylib
@@ -137,17 +137,43 @@ mylib/fast:
 .PHONY : mylib/fast
 
 #=============================================================================
-# Target rules for targets named vmc
+# Target rules for targets named importance_sampling
 
 # Build rule for target.
-vmc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vmc
-.PHONY : vmc
+importance_sampling: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 importance_sampling
+.PHONY : importance_sampling
 
 # fast build rule for target.
-vmc/fast:
-	$(MAKE) -f CMakeFiles/vmc.dir/build.make CMakeFiles/vmc.dir/build
-.PHONY : vmc/fast
+importance_sampling/fast:
+	$(MAKE) -f CMakeFiles/importance_sampling.dir/build.make CMakeFiles/importance_sampling.dir/build
+.PHONY : importance_sampling/fast
+
+#=============================================================================
+# Target rules for targets named coulomb_main
+
+# Build rule for target.
+coulomb_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coulomb_main
+.PHONY : coulomb_main
+
+# fast build rule for target.
+coulomb_main/fast:
+	$(MAKE) -f CMakeFiles/coulomb_main.dir/build.make CMakeFiles/coulomb_main.dir/build
+.PHONY : coulomb_main/fast
+
+#=============================================================================
+# Target rules for targets named coulomb_importance_sampling
+
+# Build rule for target.
+coulomb_importance_sampling: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coulomb_importance_sampling
+.PHONY : coulomb_importance_sampling
+
+# fast build rule for target.
+coulomb_importance_sampling/fast:
+	$(MAKE) -f CMakeFiles/coulomb_importance_sampling.dir/build.make CMakeFiles/coulomb_importance_sampling.dir/build
+.PHONY : coulomb_importance_sampling/fast
 
 # target to build an object file
 GDsampler.o:
@@ -163,6 +189,21 @@ GDsampler.i:
 GDsampler.s:
 	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/GDsampler.s
 .PHONY : GDsampler.s
+
+# target to build an object file
+Hamiltonians/HO_with_coulomb.o:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o
+.PHONY : Hamiltonians/HO_with_coulomb.o
+
+# target to preprocess a source file
+Hamiltonians/HO_with_coulomb.i:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.i
+.PHONY : Hamiltonians/HO_with_coulomb.i
+
+# target to generate assembly for a file
+Hamiltonians/HO_with_coulomb.s:
+	$(MAKE) -f CMakeFiles/mylib.dir/build.make CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.s
+.PHONY : Hamiltonians/HO_with_coulomb.s
 
 # target to build an object file
 Hamiltonians/hamiltonian.o:
@@ -285,6 +326,36 @@ WaveFunctions/wavefunction.s:
 .PHONY : WaveFunctions/wavefunction.s
 
 # target to build an object file
+main/coulomb_importance_sampling.o:
+	$(MAKE) -f CMakeFiles/coulomb_importance_sampling.dir/build.make CMakeFiles/coulomb_importance_sampling.dir/main/coulomb_importance_sampling.o
+.PHONY : main/coulomb_importance_sampling.o
+
+# target to preprocess a source file
+main/coulomb_importance_sampling.i:
+	$(MAKE) -f CMakeFiles/coulomb_importance_sampling.dir/build.make CMakeFiles/coulomb_importance_sampling.dir/main/coulomb_importance_sampling.i
+.PHONY : main/coulomb_importance_sampling.i
+
+# target to generate assembly for a file
+main/coulomb_importance_sampling.s:
+	$(MAKE) -f CMakeFiles/coulomb_importance_sampling.dir/build.make CMakeFiles/coulomb_importance_sampling.dir/main/coulomb_importance_sampling.s
+.PHONY : main/coulomb_importance_sampling.s
+
+# target to build an object file
+main/coulomb_main.o:
+	$(MAKE) -f CMakeFiles/coulomb_main.dir/build.make CMakeFiles/coulomb_main.dir/main/coulomb_main.o
+.PHONY : main/coulomb_main.o
+
+# target to preprocess a source file
+main/coulomb_main.i:
+	$(MAKE) -f CMakeFiles/coulomb_main.dir/build.make CMakeFiles/coulomb_main.dir/main/coulomb_main.i
+.PHONY : main/coulomb_main.i
+
+# target to generate assembly for a file
+main/coulomb_main.s:
+	$(MAKE) -f CMakeFiles/coulomb_main.dir/build.make CMakeFiles/coulomb_main.dir/main/coulomb_main.s
+.PHONY : main/coulomb_main.s
+
+# target to build an object file
 main/importance_sampling.o:
 	$(MAKE) -f CMakeFiles/importance_sampling.dir/build.make CMakeFiles/importance_sampling.dir/main/importance_sampling.o
 .PHONY : main/importance_sampling.o
@@ -380,14 +451,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... importance_sampling"
-	@echo "... mylib"
+	@echo "... edit_cache"
 	@echo "... vmc"
+	@echo "... mylib"
+	@echo "... importance_sampling"
+	@echo "... coulomb_main"
+	@echo "... coulomb_importance_sampling"
 	@echo "... GDsampler.o"
 	@echo "... GDsampler.i"
 	@echo "... GDsampler.s"
+	@echo "... Hamiltonians/HO_with_coulomb.o"
+	@echo "... Hamiltonians/HO_with_coulomb.i"
+	@echo "... Hamiltonians/HO_with_coulomb.s"
 	@echo "... Hamiltonians/hamiltonian.o"
 	@echo "... Hamiltonians/hamiltonian.i"
 	@echo "... Hamiltonians/hamiltonian.s"
@@ -412,6 +488,12 @@ help:
 	@echo "... WaveFunctions/wavefunction.o"
 	@echo "... WaveFunctions/wavefunction.i"
 	@echo "... WaveFunctions/wavefunction.s"
+	@echo "... main/coulomb_importance_sampling.o"
+	@echo "... main/coulomb_importance_sampling.i"
+	@echo "... main/coulomb_importance_sampling.s"
+	@echo "... main/coulomb_main.o"
+	@echo "... main/coulomb_main.i"
+	@echo "... main/coulomb_main.s"
 	@echo "... main/importance_sampling.o"
 	@echo "... main/importance_sampling.i"
 	@echo "... main/importance_sampling.s"

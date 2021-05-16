@@ -9,6 +9,15 @@ CMakeFiles/mylib.dir/GDsampler.o
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h
+CMakeFiles/mylib.dir/Hamiltonians/HO_with_coulomb.o
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/HO_with_coulomb.cpp
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/HO_with_coulomb.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/hamiltonian.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/harmonicoscillator.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/Math/random.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h
+ /home/erikasan/Documents/comphys-2-project-2/code/cpp/system.h
 CMakeFiles/mylib.dir/Hamiltonians/hamiltonian.o
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/hamiltonian.cpp
  /home/erikasan/Documents/comphys-2-project-2/code/cpp/Hamiltonians/hamiltonian.h
