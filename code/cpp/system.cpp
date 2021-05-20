@@ -115,6 +115,7 @@ void System::gradientDescent(double tol, double learningRate, int maxIter){
     i++;
   }
 
+  m_sampler->setWriteout(true);
   runMetropolisSteps(m_numberOfMetropolisSteps, false); // All gas no brakes
 
   return;

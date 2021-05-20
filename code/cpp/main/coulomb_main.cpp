@@ -33,7 +33,7 @@ int main(int nargs, char **args)
   double stepLength      = 0.1;
   double tol             = 1e-8;
   double learningRate    = 0.001;
-  int maxIter            = 2000;
+  int maxIter            = 5;
   double sigma           = 1;
 
   string filename_blocking = "no";

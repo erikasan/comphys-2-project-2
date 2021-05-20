@@ -34,18 +34,18 @@ int main(int nargs, char **args)
   double stepLength      = 0.1;
   double tol             = 1e-8;
   double learningRate    = 0.0001;
-  int maxIter            = 20;
+  int maxIter            = 3;
   double sigma           = 1;
 
-  string filename_blocking = "no";
-  string path= "../";
+  string filename_blocking = "energies";
+  string path = "../../../output/";
 
   System *system;
   system = new MetropolisLangevin(seed);
   system->setOmega(1);
 
-  system->setPath(path);
-  system->m_energyfile = filename_blocking;
+  // system->m_energyfile = filename_blocking;
+  // system->setPath(path);
 
   system->setSampler(new Sampler(system));
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
@@ -57,5 +57,6 @@ int main(int nargs, char **args)
   system->gradientDescent(tol, learningRate, maxIter);
 
   cout << "Finished!" << endl;
+
   return 0;
 }

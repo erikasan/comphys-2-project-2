@@ -78,7 +78,7 @@ public:
       m_path=path;
     }
     std::string  m_energyfile="default";
-    std::string  m_path="../../../output/";
+    std::string  m_path="../../output/";
 protected:
     int                          m_numberOfParticles       = 0;
     int                          m_numberOfDimensions      = 0;
