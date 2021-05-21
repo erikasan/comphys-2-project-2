@@ -8,7 +8,7 @@
 
 using namespace std;
 
-HO_with_Coulomb::HO_with_Coulomb(System* system) : HarmonicOscillator(system, 1) {
+HO_with_Coulomb::HO_with_Coulomb(System* system, double omega) : HarmonicOscillator(system, omega) {
 }
 
 double HO_with_Coulomb::computeLocalPotentialEnergy(std::vector<Particle*> particles){
