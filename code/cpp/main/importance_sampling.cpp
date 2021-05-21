@@ -36,6 +36,7 @@ int main(int nargs, char **args)
   double learningRate    = 0.0001;
   int maxIter            = 20;
   double sigma           = 1;
+  double omega           = 1;
 
   string filename_blocking = "no";
   string path= "../";
@@ -50,7 +51,7 @@ int main(int nargs, char **args)
   system->setSampler(new Sampler(system));
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
   system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma));
-  system->setHamiltonian(new HarmonicOscillator(system, 1));
+  system->setHamiltonian(new HarmonicOscillator(system, omega));
   system->setEquilibrationSteps(equilibration);
   system->setMetropolisSteps(numberOfSteps);
   system->setStepLength(stepLength);
