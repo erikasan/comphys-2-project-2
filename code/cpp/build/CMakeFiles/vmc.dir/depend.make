@@ -8,7 +8,6 @@ CMakeFiles/vmc.dir/main/main.o: ../InitialStates/initialstate.h
 CMakeFiles/vmc.dir/main/main.o: ../InitialStates/randomuniform.h
 CMakeFiles/vmc.dir/main/main.o: ../Math/random.h
 CMakeFiles/vmc.dir/main/main.o: ../WaveFunctions/gaussian_binary.h
-CMakeFiles/vmc.dir/main/main.o: ../WaveFunctions/simplegaussian.h
 CMakeFiles/vmc.dir/main/main.o: ../WaveFunctions/wavefunction.h
 CMakeFiles/vmc.dir/main/main.o: ../main/main.cpp
 CMakeFiles/vmc.dir/main/main.o: ../particle.h

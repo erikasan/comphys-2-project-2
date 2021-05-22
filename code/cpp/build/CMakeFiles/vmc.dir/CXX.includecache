@@ -38,10 +38,6 @@ wavefunction.h
 armadillo
 -
 
-/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
-wavefunction.h
-/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
-
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/wavefunction.h
 vector
 -
@@ -65,13 +61,17 @@ vector
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/sampler.h
 ../GDsampler.h
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/GDsampler.h
-../WaveFunctions/simplegaussian.h
-/home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/simplegaussian.h
 armadillo
 -
 iostream
 -
 string
+-
+cstdlib
+-
+fstream
+-
+omp.h
 -
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/particle.h

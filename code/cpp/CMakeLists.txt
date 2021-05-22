@@ -61,6 +61,7 @@ add_executable(coulomb_importance_sampling main/coulomb_importance_sampling.cpp)
 
 target_link_libraries(vmc mylib)
 target_link_libraries(vmc ${ARMADILLO_LIBRARIES})
+target_link_libraries(vmc OpenMP::OpenMP_CXX)
 
 target_link_libraries(importance_sampling mylib)
 target_link_libraries(importance_sampling ${ARMADILLO_LIBRARIES})

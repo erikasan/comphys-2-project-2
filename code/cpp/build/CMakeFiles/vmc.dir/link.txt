@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/vmc.dir/main/main.o  -o vmc libmylib.a -larmadillo 
+/usr/bin/c++  -Wall -Wextra -O3  -rdynamic CMakeFiles/vmc.dir/main/main.o  -o vmc libmylib.a -larmadillo -lgomp -lpthread 

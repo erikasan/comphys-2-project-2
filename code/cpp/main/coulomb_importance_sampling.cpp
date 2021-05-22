@@ -14,6 +14,7 @@
 #include <armadillo>
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 using namespace arma;
@@ -24,19 +25,19 @@ using namespace arma;
 int main(int nargs, char **args)
 {
 
-  int seed = 2021;
+  int seed = 47384;
 
-  int numberOfDimensions = 3;
+  int numberOfDimensions = 2;
   int numberOfParticles  = 2;
   int numHiddenLayers    = 10;
-  int numberOfSteps      = (int) 1e6;
+  int numberOfSteps      = (int) pow(2, 20);
   int equilibration      = (int) 1e5;
   double stepLength      = 0.1;
-  double tol             = 1e-8;
+  double tol             = 1e-6;
   double learningRate    = 0.001;
-  int maxIter            = 100;
+  int maxIter            = 1000;
   double sigma           = 1;
-  double omega           = 1./4;
+  double omega           = 1;
 
   string filename_blocking = "energies";
   string path = "../../../output/";

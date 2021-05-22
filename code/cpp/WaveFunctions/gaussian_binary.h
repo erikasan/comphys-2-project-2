@@ -24,6 +24,10 @@ public:
   vec localEnergygrad_b(vec x, double localEnergy);
   mat localEnergygrad_W(vec x, double localEnergy);
 
+  vec get_a(){return m_a;};
+  vec get_b(){return m_b;};
+  vec get_W(){return m_W;};
+
   vec convertPositionToArmadillo(std::vector<class Particle*> particles);
 
   std::vector<double> quantumForce(std::vector<class Particle*> particles);

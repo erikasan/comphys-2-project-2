@@ -26,7 +26,7 @@ int main(int nargs, char **args)
 
   int seed = 2021;
 
-  int numberOfDimensions = 2;
+  int numberOfDimensions = 3;
   int numberOfParticles  = 2;
   int numHiddenLayers    = 2;
   int numberOfSteps      = (int) 1e6;
@@ -34,9 +34,9 @@ int main(int nargs, char **args)
   double stepLength      = 0.1;
   double tol             = 1e-8;
   double learningRate    = 0.0001;
-  int maxIter            = 20;
+  int maxIter            = 200;
   double sigma           = 1;
-  double omega           = 1;
+  double omega           = 1./4;
 
   string filename_blocking = "no";
   string path= "../";
