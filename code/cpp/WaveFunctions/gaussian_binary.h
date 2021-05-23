@@ -6,7 +6,7 @@ using namespace arma;
 
 class Gaussian_Binary : public WaveFunction{
 public:
-  Gaussian_Binary(class System *system, int N, double sigma);
+  Gaussian_Binary(class System *system, int N, double sigma2);
 
   double evaluate(std::vector<class Particle*> particles);
   double computeDoubleDerivative(std::vector<class Particle*> particles);

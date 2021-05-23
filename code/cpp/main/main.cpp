@@ -1,4 +1,5 @@
 #include "../system.h"
+#include "../metropolis_langevin.h"
 #include "../particle.h"
 #include "../WaveFunctions/gaussian_binary.h"
 #include "../Hamiltonians/harmonicoscillator.h"
@@ -35,10 +36,10 @@ int main(int nargs, char **args)
   double tol             = 1e-5;
   double learningRate    = 0.001;
   int maxIter            = 20;
-  double sigma           = 1;
+  double sigma2           = 1;
   //double omega           = atof(args[2]);
 
-  string filename_blocking = "no";
+  //string filename_blocking = "energy";
   string path= "../";
 
   System *system;
@@ -46,35 +47,27 @@ int main(int nargs, char **args)
   double energy;
   ofstream outfile;
 
-  ivec hiddenlayers = {100};
-  vec omegas = linspace(0.5, 4, 10);
+  ivec hiddenlayers = regspace<ivec>(1, 10);
+  vec omegas = {1};
   #pragma omp parallel for private(system, energy, outfile)
   for (int i = 0; i < hiddenlayers.n_elem; i++){
     int numHiddenLayers = hiddenlayers(i);
-    outfile.open("../../output/energies_SP1D_h=" + to_string(numHiddenLayers));
-    for (int j = 0; j < omegas.n_elem; j++){
-      double omega = omegas(j);
-      system = new System(seed + omega);
-      system->setOmega(1);
+    //outfile.open("../../output/energies_SP1D_imp_h=" + to_string(numHiddenLayers));
+    system = new MetropolisLangevin(seed + omega);
+    system->setOmega(1);
 
-      system->setPath(path);
-      system->m_energyfile = filename_blocking;
+    string filename_blocking = "energy_h=" + to_string(numHiddenLayers);
+    system->setPath(path);
+    system->m_energyfile = filename_blocking;
 
-      system->setSampler(new Sampler(system));
-      system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
-      system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma));
-      system->setHamiltonian(new HarmonicOscillator(system, omega));
-      system->setEquilibrationSteps(equilibration);
-      system->setMetropolisSteps(numberOfSteps);
-      system->setStepLength(stepLength);
-      system->gradientDescent(tol, learningRate, maxIter);
-
-      energy = system->getSampler()->getEnergy();
-      outfile << energy << "\n";
-      cout << "omega = " << omega << " finished" << endl;
-    }
-    outfile.close();
-    cout << "h = " << numHiddenLayers << " finished" << endl;
+    system->setSampler(new Sampler(system));
+    system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
+    system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, 1));
+    system->setHamiltonian(new HarmonicOscillator(system, 1));
+    system->setEquilibrationSteps(equilibration);
+    system->setMetropolisSteps(numberOfSteps);
+    system->setStepLength(stepLength);
+    system->gradientDescent(tol, learningRate, maxIter);
   }
 
   cout << "Finished!" << endl;

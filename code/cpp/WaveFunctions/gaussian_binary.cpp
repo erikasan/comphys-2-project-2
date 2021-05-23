@@ -7,19 +7,14 @@
 #include <random>
 #include <armadillo>
 using namespace arma;
-
-// TEMPORARY
-#include <iostream>
-
-
 using namespace std;
 
-Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma) : WaveFunction(system)
+Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma2) : WaveFunction(system)
 {
   m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
 
-  m_sigma2 = sigma*sigma;
+  m_sigma2 = sigma2;
 
   m_W.set_size(m_M, m_N);
   m_a.set_size(m_M);

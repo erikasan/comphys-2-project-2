@@ -10,6 +10,7 @@ CMakeFiles/vmc.dir/main/main.o: ../Math/random.h
 CMakeFiles/vmc.dir/main/main.o: ../WaveFunctions/gaussian_binary.h
 CMakeFiles/vmc.dir/main/main.o: ../WaveFunctions/wavefunction.h
 CMakeFiles/vmc.dir/main/main.o: ../main/main.cpp
+CMakeFiles/vmc.dir/main/main.o: ../metropolis_langevin.h
 CMakeFiles/vmc.dir/main/main.o: ../particle.h
 CMakeFiles/vmc.dir/main/main.o: ../sampler.h
 CMakeFiles/vmc.dir/main/main.o: ../system.h
