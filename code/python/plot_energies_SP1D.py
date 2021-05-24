@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-omegas = np.linspace(0.5, 4, 10)
+omegas = np.linspace(1, 20, 5)
 hidden_layers = [1]#[1, 10, 100]
 
 sns.set()
