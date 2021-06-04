@@ -28,7 +28,7 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma2) : WaveFun
   m_av_local_energy_grad_W.zeros(m_M, m_N);
 
   mt19937_64 generator;
-  normal_distribution<double> distribution(0, 0.001);
+  normal_distribution<double> distribution(0, 1);
 
   size_t i, j;
 
@@ -178,6 +178,7 @@ void Gaussian_Binary::gradientDescent()
   b_new = m_b - m_learningRate*2*(m_av_local_energy_grad_b - localEnergy*m_av_grad_b);
   W_new = m_W - m_learningRate*2*(m_av_local_energy_grad_W - localEnergy*m_av_grad_W);
 
+  cout << accu(abs(W_new - m_W)) << endl;
 
   if (approx_equal(a_new, m_a, "absdiff", m_tol) & approx_equal(b_new, m_b, "absdiff", m_tol) & approx_equal(W_new, m_W, "absdiff", m_tol)){
     m_system->stopGradientDescent();
