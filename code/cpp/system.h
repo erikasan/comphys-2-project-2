@@ -2,6 +2,7 @@
 #include <vector>
 #include "Math/random.h"
 #include <string>
+#include <cmath>
 class System {
 public:
     System();
@@ -85,7 +86,7 @@ protected:
     int                          m_numberOfMetropolisSteps = 0;
     int                          m_equilibrationSteps      = 0.0;
     double                       m_stepLength              = 0.1;
-    double                       m_stepLengthRoot          = 0.01;
+    double                       m_stepLengthRoot          = sqrt(0.1);
     int                          m_duration                = 0;
     double                       m_omega                   = 0.0;
     double                       m_tol                     = 0.0;
