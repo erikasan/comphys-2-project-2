@@ -36,13 +36,29 @@ int main(int nargs, char **args)
   double tol             = 1e-5;
   double learningRate    = 0.001;
   int maxIter            = 20;
-  double sigma2          = 1;
   double omega           = 1;
+  double std             = 1;
 
   string filename_blocking = "no";
   string path= "../";
 
   System *system;
+  system = new System(seed);
+  system->setOmega(1);
+
+  system->setPath(path);
+  system->m_energyfile = filename_blocking;
+
+  system->setSampler(new Sampler(system));
+  system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
+  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, 1./omega, std));
+  system->setHamiltonian(new HarmonicOscillator(system, omega));
+  system->setEquilibrationSteps(equilibration);
+  system->setMetropolisSteps(numberOfSteps);
+  system->setStepLength(stepLength);
+  system->gradientDescent(tol, learningRate, maxIter);
+
+  cout << "Finished!" << endl;
 
   return 0;
 }
