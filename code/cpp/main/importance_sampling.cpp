@@ -35,7 +35,6 @@ int main(int nargs, char **args)
   double tol             = 1e-6;
   double learningRate    = 0.001;
   int maxIter            = 200;
-  double sigma           = 1;
   double omega           = 1./4;
   double std             = 1;
 
@@ -51,7 +50,7 @@ int main(int nargs, char **args)
 
   system->setSampler(new Sampler(system));
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
-  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma, std));
+  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, 1./omega, std));
   system->setHamiltonian(new HarmonicOscillator(system, omega));
   system->setEquilibrationSteps(equilibration);
   system->setMetropolisSteps(numberOfSteps);

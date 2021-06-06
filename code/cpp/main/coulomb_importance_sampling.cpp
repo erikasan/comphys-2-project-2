@@ -36,7 +36,6 @@ int main(int nargs, char **args)
   double tol             = 1e-5;
   double learningRate    = 0.01;
   int maxIter            = 1000;
-  double sigma           = 1;
   double omega           = 1;
   double std             = 1;
 

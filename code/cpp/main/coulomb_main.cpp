@@ -34,7 +34,6 @@ int main(int nargs, char **args)
   double tol             = 1e-8;
   double learningRate    = 0.001;
   int maxIter            = 5;
-  double sigma           = 1;
   double omega           = 1;
   double std             = 1;
 
@@ -50,7 +49,7 @@ int main(int nargs, char **args)
 
   system->setSampler(new Sampler(system));
   system->setInitialState(new RandomUniform(system, numberOfDimensions, numberOfParticles));
-  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, sigma, std));
+  system->setWaveFunction(new Gaussian_Binary(system, numHiddenLayers, 1./omega, std));
   system->setHamiltonian(new HO_with_Coulomb(system, omega));
   system->setEquilibrationSteps(equilibration);
   system->setMetropolisSteps(numberOfSteps);
