@@ -9,7 +9,7 @@
 using namespace arma;
 using namespace std;
 
-Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma2) : WaveFunction(system)
+Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma2, double std) : WaveFunction(system)
 {
   m_M = (m_system->getNumberOfParticles()) * (m_system->getNumberOfDimensions());
   m_N = N;
@@ -28,7 +28,7 @@ Gaussian_Binary::Gaussian_Binary(System *system, int N, double sigma2) : WaveFun
   m_av_local_energy_grad_W.zeros(m_M, m_N);
 
   mt19937_64 generator;
-  normal_distribution<double> distribution(0, 1);
+  normal_distribution<double> distribution(0, std);
 
   size_t i, j;
 
