@@ -27,20 +27,23 @@ int main(int nargs, char **args)
 
   int seed = 2021;
 
-  int numberOfDimensions = 1;
-  int numberOfParticles  = 1;
+  int numberOfDimensions = 2;
+  int numberOfParticles  = 2;
   int numHiddenLayers    = 1;
   int numberOfSteps      = (int) 1e6;
   int equilibration      = (int) 1e5;
   double stepLength      = 0.1;
   double tol             = 1e-5;
-  double learningRate    = 0.001;
-  int maxIter            = 20;
+  double learningRate    = 0.01;
+  int maxIter            = 200;
   double omega           = 1;
-  double std             = 1;
+  double std             = 0.5;
 
   string filename_blocking = "no";
-  string path= "../";
+  string path = "../../../output/convergence.txt";
+
+  ofstream outfile("../../output/convergence.txt", ofstream::out);
+  outfile.close();
 
   System *system;
   system = new System(seed);

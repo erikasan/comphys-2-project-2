@@ -38,7 +38,7 @@ int main(int nargs, char **args)
   double std             = 1;
 
   string filename_blocking = "no";
-  string path= "../";
+  string path = "../../../output/";
 
   System *system;
   system = new System(seed);

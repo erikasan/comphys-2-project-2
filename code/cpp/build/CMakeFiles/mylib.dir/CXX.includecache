@@ -141,6 +141,8 @@ random
 -
 armadillo
 -
+fstream
+-
 
 /home/erikasan/Documents/comphys-2-project-2/code/cpp/WaveFunctions/gaussian_binary.h
 wavefunction.h
